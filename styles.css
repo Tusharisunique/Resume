@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Dark background for night mode */
+    color: #e0e0e0; /* Light text color */
+    line-height: 1.6;
+    transition: background-color 0.5s, color 0.5s, filter 0.3s ease; /* Smooth transition for theme and filter */
+}
+
+header {
+    background-color: #1a1a1a; /* Dark header */
+    text-align: center;
+    padding: 40px;
+    animation: fadeIn 1s; /* Fade in effect */
+}
+
+h1 {
+    font-size: 40px;
+    margin: 0;
+    letter-spacing: 2px; /* Spacing for aesthetics */
+}
+
+h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #ffcc00; /* Gold color */
+}
+
+.contact-info {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+nav {
+    background-color: #1a1a1a; /* Dark nav */
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffcc00; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Link hover effect */
+}
+
+nav a:hover {
+    color: #e0e0e0; /* Change link color on hover */
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+section {
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 800px; /* Max width for sections */
+    border: 1px solid #444; /* Dark border */
+    border-radius: 8px;
+    background-color: #1f1f1f; /* Dark section background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s; /* Slide in effect */
+}
+
+h3 {
+    font-size: 22px;
+    margin: 10px 0;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+    color: #ffcc00; /* Gold color for section titles */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+    padding-left: 15px;
+    position: relative;
+    transition: transform 0.3s; /* List item hover effect */
+}
+
+li:hover {
+    transform: scale(1.05); /* Scale effect on list item hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a; /* Dark footer */
+    color: #fff; /* White text in footer */
+}
+
+/* Fullscreen section styles */
+.fullscreen-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    color: #fff;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth visibility transition */
+}
+
+.fullscreen-section.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Blur the background when a fullscreen section is active */
+body.fullscreen-active *:not(.fullscreen-section.active) {
+    filter: blur(5px);
+}
+
+/* Close button styles */
+.close-btn {
+    position: absolute ;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    header, section, footer {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+}
