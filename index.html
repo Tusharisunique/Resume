@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tushar Joshi - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #ffcc00;
+            background-color: #121212;
+        }
+
+        .hero {
+            height: 100vh;
+            background: url('bg2.jpg') center center/cover;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 50px;
+            z-index: 1;
+        }
+
+        .hero p {
+            color: white;
+            font-size: 20px;
+            z-index: 1;
+        }
+
+        .cta-button {
+            background-color: #ffcc00;
+            color: #121212;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #1a1a1a;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #1f1f1f;
+        }
+
+        .section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .card {
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            min-width: 250px;
+            color: #ffcc00;
+            text-align: center;
+        }
+
+        .card h4 {
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+        }
+
+        .fullscreen-section {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .fullscreen-section.active {
+            display: flex;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            background-color: #e0e0e0;
+            color: #121212;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #121212;
+        }
+
+        footer p {
+            color: #ffcc00;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="overlay"></div>
+    <h1>Tushar Joshi</h1>
+    <p>Dynamic Computer Science Student from New Delhi | Innovator | Debater</p>
+    <a href="#skills" class="cta-button">Explore My Skills</a>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#languages">Languages</a></li>
+        <li><a href="#interests">Interests</a></li>
+    </ul>
+</nav>
+
+<section id="skills" class="section">
+    <h3>Skills</h3>
+    <div class="card-container">
+        <div class="card">
+            <h4>Public Speaking</h4>
+            <p>Years of experience in debate and leadership roles.</p>
+        </div>
+        <div class="card">
+            <h4>Strategic Thinking</h4>
+            <p>Focused on business planning and strategy development.</p>
+        </div>
+        <div class="card">
+            <h4>Business Planning</h4>
+            <p>Expert in creating detailed business plans for projects.</p>
+        </div>
+        <div class="card">
+            <h4>Front-End Development</h4>
+            <p>Proficient in HTML, CSS, JavaScript, and responsive design.</p>
+        </div>
+    </div>
+</section>
+
+<section id="experience" class="section">
+    <h3>Experience</h3>
+    <div class="card-container">
+        <div class="card">
+            <h4>Volunteer</h4>
+            <p>Om Shanti Retreat Centre, New Delhi</p>
+            <p>Coordinated and managed community service projects.</p>
+        </div>
+        <div class="card">
+            <h4>Tutor</h4>
+            <p>Home Tutoring, New Delhi</p>
+            <p>Taught Physics, supported students in exam strategies.</p>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="section">
+    <h3>Education</h3>
+    <ul>
+        <li>Bachelor of Technology: Computer Science and Programming, Graphic Era (Expected 2028)</li>
+        <li>High School Diploma, Maxfort School Dwarka, New Delhi</li>
+    </ul>
+</section>
+
+<section id="awards" class="section">
+    <h3>Awards</h3>
+    <ul>
+        <li>Mr. Charisma 2024 (Graphic Era)</li>
+        <li>Top 6 Debater - Delhi Round (Gold Medal)</li>
+        <li>Folk Music Zonal - 1st Rank (2023)</li>
+        <li>Best Character Play (Theater) by OM-SHANTI RETREAT CENTRE (2023)</li>
+    </ul>
+</section>
+
+<section id="achievements" class="section">
+    <h3>Achievements</h3>
+    <ul>
+        <li>Received positive feedback from supervisors.</li>
+        <li>Organized many successful events in Om Shanti.</li>
+        <li>Participated in "Maxfort's Web Developer Hunt 2023" and won it</li>
+    </ul>
+</section>
+
+<section id="languages" class="section">
+    <h3>Languages</h3>
+    <ul>
+        <li>French - Intermediate (B1)</li>
+        <li>English - Bilingual or Proficient (C2)</li>
+    </ul>
+</section>
+
+<section id="interests" class="section">
+    <h3>Interests</h3>
+    <ul>
+        <li>Debating</li>
+        <li>Blogging/Writing</li>
+        <li>Team Sports</li>
+        <li>Music (playing instruments)</li>
+    </ul>
+</section>
+
+<footer>
+    <p>© 2024 Tushar Joshi. All rights reserved.</p>
+</footer>
+
+<script>
+    // Smooth Scroll Navigation
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').slice(1);
+            document.getElementById(targetId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
