@@ -165,3 +165,231 @@ body.fullscreen-active *:not(.fullscreen-section.active) {
         font-size: 20px;
     }
 }
+/* Dark/Light Mode Toggle */
+.toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.toggle-container input {
+    display: none;
+}
+
+.toggle-label {
+    width: 60px; /* Increase the width to prevent overlap */
+    height: 30px; /* Adjust the height */
+    background-color: #ccc;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-label .sun,
+.toggle-label .moon {
+    font-size: 18px;
+    position: absolute; /* Absolute positioning for smooth sliding */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.toggle-label .sun {
+    left: 10px; /* Position sun on the left */
+}
+
+.toggle-label .moon {
+    right: 10px; /* Position moon on the right */
+    opacity: 0; /* Hide the moon initially */
+}
+
+input:checked + .toggle-label .sun {
+    opacity: 0; /* Hide the sun when checked (dark mode) */
+}
+
+input:checked + .toggle-label .moon {
+    opacity: 1; /* Show the moon when checked */
+}
+
+/* Toggle background color for dark mode */
+input:checked + .toggle-label {
+    background-color: #4d4d4d;
+}
+/* Body transitions for background and color */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Default dark mode background */
+    color: #e0e0e0; /* Default dark mode text color */
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
+}
+
+/* Dark/Light Mode Toggle */
+.toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.toggle-container input {
+    display: none;
+}
+
+.toggle-label {
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s ease; /* Transition on background color */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-label .sun,
+.toggle-label .moon {
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s, opacity 0.3s; /* Smooth transitions for icons */
+}
+
+.toggle-label .sun {
+    left: 10px;
+}
+
+.toggle-label .moon {
+    right: 10px;
+    opacity: 0; /* Initially hide moon */
+}
+
+input:checked + .toggle-label .sun {
+    opacity: 0; /* Hide sun in dark mode */
+}
+
+input:checked + .toggle-label .moon {
+    opacity: 1; /* Show moon in dark mode */
+}
+
+/* Toggle background color for dark mode */
+input:checked + .toggle-label {
+    background-color: #4d4d4d;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #f0f0f0; /* Light mode background */
+    color: #121212; /* Light mode text color */
+}
+
+body.light-mode header {
+    background-color: #fff;
+    color: #121212;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
+}
+
+body.light-mode nav {
+    background-color: #f8f8f8;
+    transition: background-color 0.5s ease;
+}
+
+body.light-mode section {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    transition: background-color 0.5s ease, border 0.5s ease;
+}
+
+body.light-mode footer {
+    background-color: #f8f8f8;
+    color: #121212;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.light-mode a {
+    color: #333;
+    transition: color 0.5s ease;
+}
+
+body.light-mode a:hover {
+    color: #555;
+}
+/* Download Button Styling */
+.download-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffcc00; /* Gold color */
+    color: #121212; /* Dark text */
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Button shadow for depth */
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn .icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.download-btn:hover {
+    background-color: #e0b000; /* Darker gold on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    transform: translateY(-5px); /* Lift the button on hover */
+}
+
+.download-btn:active {
+    transform: translateY(2px); /* Pressed button effect */
+}
+
+/* Subtle sparkle effect on hover */
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.5), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.download-btn:hover::before {
+    opacity: 0.4;
+    animation: sparkle 1.2s infinite ease-in-out;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100%, 100%);
+    }
+}
