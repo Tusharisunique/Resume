@@ -49,7 +49,7 @@ nav ul li {
 nav a {
     color: #ffcc00; /* Link color */
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease; /* Link hover effect */
+    transition: color 0.7s ease, transform 0.7s ease; /* Link hover effect */
 }
 
 nav a:hover {
@@ -85,7 +85,7 @@ li {
     margin: 5px 0;
     padding-left: 15px;
     position: relative;
-    transition: transform 0.3s; /* List item hover effect */
+    transition: transform 0.7s; /* List item hover effect */
 }
 
 li:hover {
@@ -199,7 +199,7 @@ body.fullscreen-active *:not(.fullscreen-section.active) {
     position: absolute; /* Absolute positioning for smooth sliding */
     top: 50%;
     transform: translateY(-50%);
-    transition: transform 0.3s;
+    transition: transform 0.7s;
 }
 
 .toggle-label .sun {
@@ -393,3 +393,30 @@ body.light-mode a:hover {
         transform: translate(100%, 100%);
     }
 }
+
+.card {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 250px;
+    color: #ffcc00;
+    text-align: center;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.card:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+/* Zoom effect for text inside the cards */
+.card h3,
+.card p {
+    transition: transform 0.3s ease; /* Smooth zoom effect for text */
+}
+
+.card:hover h3,
+.card:hover p {
+    transform: scale(1.1); /* Zoom effect on text when card is hovered */
+}
+
