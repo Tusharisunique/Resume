@@ -90,11 +90,19 @@
             padding: 60px 20px;
             text-align: center;
             background-color: #1f1f1f;
+            transition: transform 0.7s ease, box-shadow 0.7s ease;
+        }
+        .section:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .section h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+        .section h3, .section h4, .section p {
+            transition: transform 0.7s ease;
+        }
+
+        .section:hover h3, .section:hover h4, .section:hover p {
+            transform: scale(1.05);
         }
 
         .card-container {
@@ -234,7 +242,7 @@
     <h3>Education</h3>
     <ul>
         <li>Bachelor of Technology: Computer Science and Programming, Graphic Era (Expected 2028)</li>
-        <li>High School Diploma, Maxfort School Dwarka, New Delhi</li>
+        <li>Senior Secondary School Diploma, Maxfort School Dwarka, New Delhi</li>
     </ul>
 </section>
 
@@ -274,6 +282,7 @@
         <li>Music (playing instruments)</li>
     </ul>
 </section>
+
 <footer>
     <!-- Other footer content -->
     <div class="download-container">
@@ -316,3 +325,4 @@
 
 </body>
 </html>
+
