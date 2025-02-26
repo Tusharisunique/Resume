@@ -1,29 +1,29 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #121212; /* Dark background for night mode */
-    color: #e0e0e0; /* Light text color */
+    background-color: #121212;
+    color: #e0e0e0;
     line-height: 1.6;
-    transition: background-color 0.5s, color 0.5s, filter 0.3s ease; /* Smooth transition for theme and filter */
+    transition: background-color 0.5s, color 0.5s, filter 0.3s ease;
 }
 
 header {
-    background-color: #1a1a1a; /* Dark header */
+    background-color: #1a1a1a;
     text-align: center;
     padding: 40px;
-    animation: fadeIn 1s; /* Fade in effect */
+    animation: fadeIn 1s;
 }
 
 h1 {
     font-size: 40px;
     margin: 0;
-    letter-spacing: 2px; /* Spacing for aesthetics */
+    letter-spacing: 2px;
 }
 
 h2 {
     font-size: 24px;
     margin: 10px 0;
-    color: #ffcc00; /* Gold color */
+    color: #ffcc00;
 }
 
 .contact-info {
@@ -32,7 +32,7 @@ h2 {
 }
 
 nav {
-    background-color: #1a1a1a; /* Dark nav */
+    background-color: #1a1a1a;
     padding: 15px;
 }
 
@@ -47,25 +47,25 @@ nav ul li {
 }
 
 nav a {
-    color: #ffcc00; /* Link color */
+    color: #ffcc00;
     text-decoration: none;
-    transition: color 0.7s ease, transform 0.7s ease; /* Link hover effect */
+    transition: color 0.7s ease, transform 0.7s ease;
 }
 
 nav a:hover {
-    color: #e0e0e0; /* Change link color on hover */
-    transform: scale(1.1); /* Scale effect on hover */
+    color: #e0e0e0;
+    transform: scale(1.1);
 }
 
 section {
     padding: 20px;
     margin: 10px auto;
-    max-width: 800px; /* Max width for sections */
-    border: 1px solid #444; /* Dark border */
+    max-width: 800px;
+    border: 1px solid #444;
     border-radius: 8px;
-    background-color: #1f1f1f; /* Dark section background */
+    background-color: #1f1f1f;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    animation: slideIn 0.5s; /* Slide in effect */
+    animation: slideIn 0.5s;
 }
 
 h3 {
@@ -73,7 +73,7 @@ h3 {
     margin: 10px 0;
     border-bottom: 2px solid #444;
     padding-bottom: 5px;
-    color: #ffcc00; /* Gold color for section titles */
+    color: #ffcc00;
 }
 
 ul {
@@ -85,21 +85,20 @@ li {
     margin: 5px 0;
     padding-left: 15px;
     position: relative;
-    transition: transform 0.7s; /* List item hover effect */
+    transition: transform 0.7s;
 }
 
 li:hover {
-    transform: scale(1.05); /* Scale effect on list item hover */
+    transform: scale(1.05);
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #1a1a1a; /* Dark footer */
-    color: #fff; /* White text in footer */
+    background-color: #1a1a1a;
+    color: #fff;
 }
 
-/* Fullscreen section styles */
 .fullscreen-section {
     position: fixed;
     top: 0;
@@ -109,12 +108,12 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
     z-index: 9999;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth visibility transition */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .fullscreen-section.active {
@@ -122,12 +121,10 @@ footer {
     visibility: visible;
 }
 
-/* Blur the background when a fullscreen section is active */
 body.fullscreen-active *:not(.fullscreen-section.active) {
     filter: blur(5px);
 }
 
-/* Close button styles */
 .close-btn {
     position: absolute ;
     top: 20px;
@@ -139,7 +136,6 @@ body.fullscreen-active *:not(.fullscreen-section.active) {
     cursor: pointer;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -150,7 +146,6 @@ body.fullscreen-active *:not(.fullscreen-section.active) {
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Responsive design */
 @media (max-width: 600px) {
     header, section, footer {
         padding: 15px;
@@ -165,75 +160,7 @@ body.fullscreen-active *:not(.fullscreen-section.active) {
         font-size: 20px;
     }
 }
-/* Dark/Light Mode Toggle */
-.toggle-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-}
 
-.toggle-container input {
-    display: none;
-}
-
-.toggle-label {
-    width: 60px; /* Increase the width to prevent overlap */
-    height: 30px; /* Adjust the height */
-    background-color: #ccc;
-    border-radius: 30px;
-    position: relative;
-    cursor: pointer;
-    padding: 5px;
-    transition: background-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.toggle-label .sun,
-.toggle-label .moon {
-    font-size: 18px;
-    position: absolute; /* Absolute positioning for smooth sliding */
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.7s;
-}
-
-.toggle-label .sun {
-    left: 10px; /* Position sun on the left */
-}
-
-.toggle-label .moon {
-    right: 10px; /* Position moon on the right */
-    opacity: 0; /* Hide the moon initially */
-}
-
-input:checked + .toggle-label .sun {
-    opacity: 0; /* Hide the sun when checked (dark mode) */
-}
-
-input:checked + .toggle-label .moon {
-    opacity: 1; /* Show the moon when checked */
-}
-
-/* Toggle background color for dark mode */
-input:checked + .toggle-label {
-    background-color: #4d4d4d;
-}
-/* Body transitions for background and color */
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #121212; /* Default dark mode background */
-    color: #e0e0e0; /* Default dark mode text color */
-    line-height: 1.6;
-    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
-}
-
-/* Dark/Light Mode Toggle */
 .toggle-container {
     position: fixed;
     top: 20px;
@@ -255,7 +182,7 @@ body {
     position: relative;
     cursor: pointer;
     padding: 5px;
-    transition: background-color 0.3s ease; /* Transition on background color */
+    transition: background-color 0.3s;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -267,7 +194,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    transition: transform 0.3s, opacity 0.3s; /* Smooth transitions for icons */
+    transition: transform 0.7s;
 }
 
 .toggle-label .sun {
@@ -276,32 +203,96 @@ body {
 
 .toggle-label .moon {
     right: 10px;
-    opacity: 0; /* Initially hide moon */
+    opacity: 0;
 }
 
 input:checked + .toggle-label .sun {
-    opacity: 0; /* Hide sun in dark mode */
+    opacity: 0;
 }
 
 input:checked + .toggle-label .moon {
-    opacity: 1; /* Show moon in dark mode */
+    opacity: 1;
 }
 
-/* Toggle background color for dark mode */
 input:checked + .toggle-label {
     background-color: #4d4d4d;
 }
 
-/* Light Mode Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.toggle-container input {
+    display: none;
+}
+
+.toggle-label {
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-label .sun,
+.toggle-label .moon {
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.toggle-label .sun {
+    left: 10px;
+}
+
+.toggle-label .moon {
+    right: 10px;
+    opacity: 0;
+}
+
+input:checked + .toggle-label .sun {
+    opacity: 0;
+}
+
+input:checked + .toggle-label .moon {
+    opacity: 1;
+}
+
+input:checked + .toggle-label {
+    background-color: #4d4d4d;
+}
+
 body.light-mode {
-    background-color: #f0f0f0; /* Light mode background */
-    color: #121212; /* Light mode text color */
+    background-color: #f0f0f0;
+    color: #121212;
 }
 
 body.light-mode header {
     background-color: #fff;
     color: #121212;
-    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 body.light-mode nav {
@@ -329,7 +320,7 @@ body.light-mode a {
 body.light-mode a:hover {
     color: #555;
 }
-/* Download Button Styling */
+
 .download-container {
     text-align: center;
     margin-top: 20px;
@@ -338,13 +329,13 @@ body.light-mode a:hover {
 .download-btn {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #ffcc00; /* Gold color */
-    color: #121212; /* Dark text */
+    background-color: #ffcc00;
+    color: #121212;
     font-size: 18px;
     font-weight: bold;
     border: none;
     border-radius: 50px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Button shadow for depth */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -357,16 +348,15 @@ body.light-mode a:hover {
 }
 
 .download-btn:hover {
-    background-color: #e0b000; /* Darker gold on hover */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
-    transform: translateY(-5px); /* Lift the button on hover */
+    background-color: #e0b000;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
 }
 
 .download-btn:active {
-    transform: translateY(2px); /* Pressed button effect */
+    transform: translateY(2px);
 }
 
-/* Subtle sparkle effect on hover */
 .download-btn::before {
     content: '';
     position: absolute;
@@ -384,7 +374,6 @@ body.light-mode a:hover {
     animation: sparkle 1.2s infinite ease-in-out;
 }
 
-/* Sparkle animation */
 @keyframes sparkle {
     0% {
         transform: translate(0, 0);
@@ -403,20 +392,32 @@ body.light-mode a:hover {
     min-width: 250px;
     color: #ffcc00;
     text-align: center;
-    transition: transform 0.3s ease; /* Smooth zoom effect */
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.1); /* Zoom effect on hover */
+    transform: scale(1.1);
 }
-/* Zoom effect for text inside the cards */
+
 .card h3,
 .card p {
-    transition: transform 0.3s ease; /* Smooth zoom effect for text */
+    transition: transform 0.3s ease;
 }
 
 .card:hover h3,
 .card:hover p {
-    transform: scale(1.1); /* Zoom effect on text when card is hovered */
+    transform: scale(1.1);
 }
 
+.download-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
