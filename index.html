@@ -168,26 +168,17 @@
 
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             padding: 20px;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            justify-items: center;
         }
 
         .card {
-            background: linear-gradient(145deg, #232323, #1a1a1a);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            text-align: center;
             width: 100%;
             max-width: 300px;
-            color: var(--text-light);
+            margin: 0 auto;
+            height: 100%;
         }
 
         body.light-mode .card {
@@ -436,22 +427,16 @@
             }
 
             .card-container {
+                grid-template-columns: 1fr !important;
                 padding: 10px;
                 gap: 20px;
+                width: 100%;
             }
 
             .card {
-                width: calc(100% - 20px);
-                padding: 20px;
-                margin: 10px;
-            }
-
-            #skills .card-container,
-            #projects .card-container,
-            #experience .card-container,
-            #strengths .card-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
+                width: 90%;
+                max-width: 300px;
+                margin: 0 auto;
             }
 
             #skills .card-container {
@@ -463,39 +448,40 @@
             }
 
             #projects .card-container {
-                grid-template-columns: 1fr;
                 grid-template-areas: 
                     "card1"
                     "card2"
                     "card3"
                     "card4";
-                gap: 20px;
             }
 
-            #projects .card {
-                justify-self: center;
+            #experience .card-container {
+                grid-template-areas: 
+                    "card1"
+                    "card2"
+                    "card3";
             }
 
-            .card h4 {
-                font-size: 18px;
-            }
-
-            .card p {
-                font-size: 14px;
-            }
-
-            .card ul li {
-                font-size: 14px;
+            #strengths .card-container {
+                grid-template-columns: 1fr;
             }
 
             .section {
-                padding: 30px 15px;
-                margin: 15px 10px;
+                padding: 20px 10px;
+                margin: 10px;
             }
 
-            .section h3 {
-                font-size: 24px;
-                margin-bottom: 20px;
+            body {
+                overflow-x: hidden;
+                width: 100%;
+            }
+
+            #skills .card,
+            #projects .card,
+            #experience .card,
+            #strengths .card {
+                justify-self: center;
+                align-self: center;
             }
         }
 
@@ -509,16 +495,12 @@
             }
 
             .card {
-                padding: 15px;
+                width: 85%;
             }
 
-            .card h4 {
-                font-size: 16px;
-            }
-
-            .card p,
-            .card ul li {
-                font-size: 13px;
+            .section {
+                padding: 15px 5px;
+                margin: 5px;
             }
         }
 
@@ -556,53 +538,12 @@
             }
         }
 
-        #skills .card,
-        #projects .card {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 200px;
-        }
-
-        #strengths .card-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        #strengths .card {
-            justify-self: center;
-            align-self: center;
-        }
-
         #skills .card-container {
             display: grid;
             grid-template-areas: 
                 "web mobile database"
                 ". languages .";
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        #skills .card:nth-child(1) {
-            grid-area: languages;
-            justify-self: center;
-        }
-        #skills .card:nth-child(2) {
-            grid-area: web;
-        }
-        #skills .card:nth-child(3) {
-            grid-area: mobile;
-        }
-        #skills .card:nth-child(4) {
-            grid-area: database;
         }
 
         #projects .card-container {
@@ -611,30 +552,19 @@
                 "card2 card1 card3"
                 ". card4 .";
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
-        #projects .card:nth-child(1) {
-            grid-area: card1;
-        }
-        #projects .card:nth-child(2) {
-            grid-area: card2;
-        }
-        #projects .card:nth-child(3) {
-            grid-area: card3;
-        }
-        #projects .card:nth-child(4) {
-            grid-area: card4;
-            justify-self: center;
+        #experience .card-container {
+            display: grid;
+            grid-template-areas: 
+                ". card1 ."
+                "card2 . card3";
+            grid-template-columns: repeat(3, 1fr);
         }
 
-        .card {
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
+        #strengths .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
 
         body.light-mode .hero h1,
