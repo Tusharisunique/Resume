@@ -410,13 +410,15 @@
                 margin: 0;
             }
 
-            #skills .card-container,
-            #projects .card-container,
-            #experience .card-container,
-            #strengths .card-container {
-                grid-template-columns: 1fr;
-                grid-template-areas: none;
-            }
+            #skills .card:nth-child(1) { order: 4; }
+            #skills .card:nth-child(2) { order: 1; }
+            #skills .card:nth-child(3) { order: 2; }
+            #skills .card:nth-child(4) { order: 3; }
+
+            #projects .card:nth-child(1) { order: 2; }
+            #projects .card:nth-child(2) { order: 1; }
+            #projects .card:nth-child(3) { order: 3; }
+            #projects .card:nth-child(4) { order: 4; }
 
             .hero {
                 padding: 20px;
@@ -445,12 +447,13 @@
             }
 
             nav ul {
-                flex-direction: column;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
                 gap: 10px;
             }
 
             nav ul li {
-                width: 100%;
                 text-align: center;
             }
         }
@@ -505,20 +508,33 @@
         }
 
         #skills .card-container {
+            display: grid;
             grid-template-areas: 
                 "web mobile database"
                 ". languages .";
             grid-template-columns: repeat(3, 1fr);
         }
 
+        #skills .card:nth-child(1) { grid-area: languages; }
+        #skills .card:nth-child(2) { grid-area: web; }
+        #skills .card:nth-child(3) { grid-area: mobile; }
+        #skills .card:nth-child(4) { grid-area: database; }
+
         #projects .card-container {
+            display: grid;
             grid-template-areas: 
-                "card2 card1 card3"
-                ". card4 .";
+                "virtual map smiling"
+                ". games .";
             grid-template-columns: repeat(3, 1fr);
         }
 
+        #projects .card:nth-child(1) { grid-area: map; }
+        #projects .card:nth-child(2) { grid-area: virtual; }
+        #projects .card:nth-child(3) { grid-area: smiling; }
+        #projects .card:nth-child(4) { grid-area: games; }
+
         #experience .card-container {
+            display: grid;
             grid-template-areas: 
                 ". card1 ."
                 "card2 . card3";
