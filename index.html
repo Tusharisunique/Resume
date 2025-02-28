@@ -45,11 +45,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
         }
 
         .hero h1 {
-            color: #ffcc00;
+            color: var(--text-light);
             font-size: 60px;
             font-weight: 700;
             margin-bottom: 20px;
@@ -57,7 +57,7 @@
         }
 
         .hero p {
-            color: #ffcc00;
+            color: var(--text-light);
             font-size: 24px;
             font-family: 'Open Sans', sans-serif;
             margin-bottom: 30px;
@@ -114,6 +114,18 @@
             transform: translateY(-2px);
         }
 
+        body.light-mode nav {
+            background-color: rgba(240, 240, 240, 0.95);
+        }
+
+        body.light-mode nav ul li a {
+            color: #333;
+        }
+
+        body.light-mode nav ul li a:hover {
+            color: #ffcc00;
+        }
+
         .section {
             padding: 100px 40px;
             text-align: center;
@@ -139,7 +151,7 @@
         }
 
         body.light-mode .section h3 {
-            color: var(--text-dark);
+            color: #222;
         }
 
         .section h3:after {
@@ -195,7 +207,7 @@
         }
 
         body.light-mode .card h4 {
-            color: var(--text-dark);
+            color: #333;
         }
 
         .card p {
@@ -206,7 +218,7 @@
         }
 
         body.light-mode .card p {
-            color: #333;
+            color: #555;
         }
 
         .card ul {
@@ -217,7 +229,7 @@
         }
 
         body.light-mode .card ul {
-            color: #333;
+            color: #555;
         }
 
         .card ul li {
@@ -229,7 +241,7 @@
         }
 
         body.light-mode .card ul li {
-            color: #333;
+            color: #555;
         }
 
         .contact-info {
@@ -242,7 +254,7 @@
         }
 
         .contact-info a {
-            color: #ffcc00;
+            color: var(--text-light);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -254,9 +266,17 @@
         }
 
         .contact-info a:hover {
-            color: #ffcc00;
-            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        body.light-mode .contact-info a {
+            color: var(--text-dark);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .contact-info a:hover {
+            background: rgba(0, 0, 0, 0.15);
         }
 
         footer {
@@ -270,6 +290,14 @@
             color: #ffcc00;
             font-size: 16px;
             margin: 20px 0;
+        }
+
+        body.light-mode footer {
+            background-color: #f5f5f5;
+        }
+
+        body.light-mode footer p {
+            color: #333;
         }
 
         .download-container {
@@ -292,6 +320,15 @@
         .download-btn:hover {
             transform: scale(1.05);
             background-color: #fff;
+        }
+
+        body.light-mode .download-btn {
+            background: #ffcc00;
+            color: #333;
+        }
+
+        body.light-mode .download-btn:hover {
+            background: #e6b800;
         }
 
         .toggle-container {
@@ -360,25 +397,162 @@
         }
 
         @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px;
+            }
+
             .hero h1 {
-                font-size: 40px;
+                font-size: 32px;
             }
-            
+
             .hero p {
-                font-size: 18px;
+                font-size: 16px;
             }
 
-            nav ul li {
-                margin: 0 15px;
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
             }
 
-            .section {
-                padding: 60px 20px;
-                width: 95%;
+            .contact-info a {
+                width: 100%;
+                padding: 12px;
+                justify-content: center;
+            }
+
+            nav {
+                padding: 10px;
+                overflow-x: auto;
+            }
+
+            nav ul {
+                gap: 15px;
+                padding: 0 10px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                padding: 8px 12px;
             }
 
             .card-container {
+                padding: 10px;
+                gap: 20px;
+            }
+
+            .card {
+                width: calc(100% - 20px);
+                padding: 20px;
+                margin: 10px;
+            }
+
+            #skills .card-container,
+            #projects .card-container,
+            #experience .card-container,
+            #strengths .card-container {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            #skills .card-container {
+                grid-template-areas: 
+                    "languages"
+                    "web"
+                    "mobile"
+                    "database";
+            }
+
+            #projects .card-container {
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    "card1"
+                    "card2"
+                    "card3"
+                    "card4";
+                gap: 20px;
+            }
+
+            #projects .card {
+                justify-self: center;
+            }
+
+            .card h4 {
+                font-size: 18px;
+            }
+
+            .card p {
+                font-size: 14px;
+            }
+
+            .card ul li {
+                font-size: 14px;
+            }
+
+            .section {
+                padding: 30px 15px;
+                margin: 15px 10px;
+            }
+
+            .section h3 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .card h4 {
+                font-size: 16px;
+            }
+
+            .card p,
+            .card ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                padding: 20px;
+            }
+
+            .contact-info {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .contact-info a {
+                width: auto;
+            }
+
+            .section {
+                padding: 20px 15px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .card-container {
+                gap: 25px;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
             }
         }
 
@@ -392,22 +566,84 @@
         }
 
         #strengths .card-container {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         #strengths .card {
-            flex: 0 1 250px;
-            min-height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            justify-self: center;
+            align-self: center;
         }
 
-        #strengths .card h4 {
-            margin: 0;
+        #skills .card-container {
+            display: grid;
+            grid-template-areas: 
+                "web mobile database"
+                ". languages .";
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #skills .card:nth-child(1) {
+            grid-area: languages;
+            justify-self: center;
+        }
+        #skills .card:nth-child(2) {
+            grid-area: web;
+        }
+        #skills .card:nth-child(3) {
+            grid-area: mobile;
+        }
+        #skills .card:nth-child(4) {
+            grid-area: database;
+        }
+
+        #projects .card-container {
+            display: grid;
+            grid-template-areas: 
+                "card2 card1 card3"
+                ". card4 .";
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #projects .card:nth-child(1) {
+            grid-area: card1;
+        }
+        #projects .card:nth-child(2) {
+            grid-area: card2;
+        }
+        #projects .card:nth-child(3) {
+            grid-area: card3;
+        }
+        #projects .card:nth-child(4) {
+            grid-area: card4;
+            justify-self: center;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        body.light-mode .hero h1,
+        body.light-mode .hero p {
+            color: var(--text-dark);
+        }
+
+        body.light-mode .overlay {
+            background: rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
@@ -535,7 +771,6 @@
             <span class="text">Download My Resume</span>
         </a>
     </div>
-    <p>© 2025 Tushar Joshi.</p>
 </footer>
 
 <div class="toggle-container">
